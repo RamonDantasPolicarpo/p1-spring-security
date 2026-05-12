@@ -1,6 +1,6 @@
-package repository;
+package dev.ramondp.p1_spring_security.repository;
 
-import model.User;
+import dev.ramondp.p1_spring_security.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

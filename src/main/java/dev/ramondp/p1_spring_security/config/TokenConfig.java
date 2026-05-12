@@ -1,8 +1,8 @@
-package config;
+package dev.ramondp.p1_spring_security.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import model.User;
+import dev.ramondp.p1_spring_security.model.User;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;

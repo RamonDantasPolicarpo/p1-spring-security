@@ -1,10 +1,10 @@
-package config;
+package dev.ramondp.p1_spring_security.config;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
+import dev.ramondp.p1_spring_security.repository.UserRepository;
 
 @Service
 public class AuthConfig implements UserDetailsService {

@@ -1,4 +1,4 @@
-package config;
+package dev.ramondp.p1_spring_security.config;
 
 import jakarta.servlet.DispatcherType;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package dto.resquest;
+package dev.ramondp.p1_spring_security.dto.resquest;
 
 import jakarta.validation.constraints.NotEmpty;
 

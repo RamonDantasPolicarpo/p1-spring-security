@@ -1,4 +1,4 @@
-package model;
+package dev.ramondp.p1_spring_security.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

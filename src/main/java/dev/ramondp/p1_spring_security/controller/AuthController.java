@@ -1,12 +1,12 @@
-package controller;
+package dev.ramondp.p1_spring_security.controller;
 
-import config.TokenConfig;
-import dto.response.LoginResponse;
-import dto.response.RegisterUserResponse;
-import dto.resquest.LoginRequest;
-import dto.resquest.RegisterUserRequest;
+import dev.ramondp.p1_spring_security.config.TokenConfig;
+import dev.ramondp.p1_spring_security.dto.response.LoginResponse;
+import dev.ramondp.p1_spring_security.dto.response.RegisterUserResponse;
+import dev.ramondp.p1_spring_security.dto.resquest.LoginRequest;
+import dev.ramondp.p1_spring_security.dto.resquest.RegisterUserRequest;
 import jakarta.validation.Valid;
-import model.User;
+import dev.ramondp.p1_spring_security.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import repository.UserRepository;
+import dev.ramondp.p1_spring_security.repository.UserRepository;
 
 @RestController
 @RequestMapping("/auth")
