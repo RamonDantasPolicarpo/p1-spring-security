@@ -1,5 +1,6 @@
 package controller;
 
+import config.TokenConfig;
 import dto.response.LoginResponse;
 import dto.response.RegisterUserResponse;
 import dto.resquest.LoginRequest;
@@ -25,11 +26,13 @@ public class AuthController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
+    private final TokenConfig tokenConfig;
 
-    public AuthController(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager) {
+    public AuthController(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, TokenConfig tokenConfig) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.authenticationManager = authenticationManager;
+        this.tokenConfig = tokenConfig;
     }
 
     @PostMapping("/login")
@@ -38,9 +41,13 @@ public class AuthController {
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(request.email(), request.password());
         Authentication authentication = authenticationManager.authenticate(authToken);
 
-        return null;
+        User user = (User) authentication.getPrincipal();
+        String token = tokenConfig.genereteToken(user);
+
+        return ResponseEntity.ok(new LoginResponse(token));
     }
 
+    @PostMapping("/register")
     public ResponseEntity<RegisterUserResponse> register(@Valid @RequestBody RegisterUserRequest request) {
         User novoUser = new User();
         novoUser.setPassword(passwordEncoder.encode(request.password()));
